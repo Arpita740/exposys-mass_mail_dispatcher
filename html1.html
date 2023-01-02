@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass Mail Dispatcher</title>
+   <link rel="stylesheet" href="css1.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+
+   <link
+        href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Roboto+Condensed&family=Signika:wght@500&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="select animated fadeInDown delay-4s">
+            <h1 style="color: black;">Mass Mail <br>Dispatcher</h1>
+            <input type="file" id="upload" accept="text/csv">
+        </div>
+        <div class="mailinfo">
+            <form onsubmit="sendEmail(); reset(); return false;">
+                <h2>WRITE YOUR MAIL HERE</h2>
+                <input type="email" id="from" placeholder="From(Email ID)" required>
+                <input type="text" id="subject" placeholder="Subject" required>
+                <textarea name="" id="msg" cols="20" rows="20" placeholder="Body" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    
+    <hr>
+    <div class="tables">
+        <div class="valTab">
+            <table id="val">
+                <tr>
+                    <td>
+                        <h2>Valid Emails : <span id="valCount"></span></h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="invalTab">
+            <table id="inval">
+                <tr>
+                    <td>
+                        <h2>InValid Emails : <span id="invalCount"></span></h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- <section></section> -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <script>var wow = new WOW(
+        {
+            boxClass: 'wow',
+            animateClass:'animated',
+            offset:       0,
+            mobile:       true,
+            live:         true,
+            callback:     function(box) {
+
+            },
+            scrollContainer:null,
+            resetAnimation:true,
+        }
+    )
+
+    </script>
+</body>
+
+</html>
